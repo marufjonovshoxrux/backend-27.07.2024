@@ -1,15 +1,20 @@
 {
-  "name": "testproject",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "sass": "^1.77.8",
-    "vite": "^5.3.4"
-  }
+	"name": "testproject",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "concurrently  \"vite\" \"json-server -p 8080 -w db.json\" ",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"sass": "^1.77.8",
+		"vite": "^5.3.4"
+	},
+	"dependencies": {
+		"axios": "^1.7.2",
+		"concurrently": "^8.2.2",
+		"json-server": "^1.0.0-beta.1"
+	}
 }

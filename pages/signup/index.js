@@ -1,25 +1,42 @@
+
+import { ApiCall} from "../../lib/http.request.js"
+
+
+
 const form = document.forms.namedItem('signup')
 const btn = document.querySelector('.btn_enter')
-const locale = JSON.parse(localStorage.getItem('title'))
-const baseUrl = 'http://localhost:8080'
-let Bank
+const locale = JSON.parse(localStorage.getItem('user'))
 
-form.onsubmit = async e => {
+const apiCall = new ApiCall('http://localhost:8080')
+
+
+form.onsubmit = async (e) => {
 	e.preventDefault()
 
-	Bank = {
+	const user = {
 		email: new FormData(form).get('email'),
 		names: new FormData(form).get('name'),
 		surname: new FormData(form).get('surname'),
 		password: new FormData(form).get('password'),
 	}
 
-	fetch(baseUrl + '/todos', {
-		method: 'POST',
-		body: JSON.stringify(Bank),
-	})
-		.then(res => res.json())
-		.then(res => console.log(res))
+	const users = await apiCall.getData('/users?email=' + user.email)
+	
 
-	localStorage.setItem('user', JSON.stringify(Bank))
+	
+	if (users.data.length > 0) {
+		alert('На эту почту регистрация есть')
+		return
+	}
+	const res = await apiCall.postData('/users', user)
+	
+	if (res.status === 201) {
+		form.reset()
+		location.assign('/pages/signin/')
+	}
+
+
+
+
+	localStorage.setItem('user', JSON.stringify(user))
 }

@@ -1,26 +1,39 @@
+import { ApiCall } from "../../lib/http.request"
+
+
+
 const form = document.forms.namedItem('signin')
-const baseUrl = 'http://localhost:8080'
-let Bank;
+const locale = JSON.parse(localStorage.getItem('user'))
+const apiCall = new ApiCall('http://localhost:8080')
 
-
-
-form.onsubmit = async (e) => {
+form.onsubmit = async e => {
 	e.preventDefault()
 
-	Bank = {
+	const user = {
 		email: new FormData(form).get('sign'),
 		password: new FormData(form).get('password'),
 	}
 
-	console.log(Bank);
+	const users = await apiCall.getData('/users?email=' + user.email)
+	const password = await apiCall.getData('/users?password=' + user.password)
 
+	if (users.data.length > 0 ) {
+		alert('Почта правильно')
+		// return
+	} else {
+		alert('Почта неправильно')
+	}
 
-    fetch(baseUrl + '/todos', {
-			method: 'POST',
-			body: JSON.stringify(Bank),
-		})
-			.then(res => res.json())
-			.then(res => console.log(res))
+	if (password.data.length) {
+		alert('Пароль правильно')
+	} else {
+		alert('Пароль неправильно')
+	}
 
+	if (users.data.length > 0 && password.data.length) {
+		alert("всё правильно")
+		location.assign('/')
+	} 
+
+	localStorage.setItem('user', JSON.stringify(user))
 }
-

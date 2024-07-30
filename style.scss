@@ -1,61 +1,141 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font-family: Roboto;
+	font-family: Roboto;
 
-    h1 {
-        margin-top: 80px;
-        margin-bottom: 30px;
-    }
+	h1 {
+		margin-top: 80px;
+		margin-bottom: 30px;
+	}
 
-    form {
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	input {
+		width: 320px;
+		height: 45px;
+		margin: auto;
+		border-radius: 10px;
+		border: 1px solid black;
+		text-align: center;
+		color: grey;
+	}
+	.flex {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		margin-top: 20px;
+	}
+	.btn_enter {
+		width: 320px;
+		height: 45px;
+		color: white;
+		background-color: blue;
+		border-radius: 10px;
+		margin: auto;
+		border: none;
+	}
+	.btn-sign {
+		width: 320px;
+		height: 45px;
+		color: white;
+		background-color: blue;
+		border-radius: 10px;
+		margin: auto;
+		border: none;
+	}
+
+	#sign {
+		text-decoration: none;
+		color: blue;
+		font-size: 17px;
+	}
+}
+.container {
+	margin: 0 auto;
+	width: 1200px;
+	.wallet {
+		font-size: 48px;
+		color: #000000;
+	}
+	.email {
+		font-size: 18px;
+		color: #0047ff;
+		text-decoration: none;
+	}
+
+	h3 {
+		margin-top: 80px;
+		font-size: 24px;
+		font-weight: 500;
+	}
+	.card {
+		width: 282px;
+		height: 160px;
+		background: linear-gradient(84.37deg, #d7816a 2.27%, #bd4f6c 92.26%);
+		border-radius: 15px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		color: white;
+		span {
+			padding: 23px;
+		}
+		.Visa {
+			font-size: 24px;
+			display: flex;
+			margin-top: 19px;
+			margin-bottom: 50px;
+		}
+		.RUB {
+			font-size: 14px;
+		}
+	}
+
+	.watch_wallet {
+		color: #0047ff;
+		font-size: 16px;
+	}
+
+	.trans_action {
+		font-size: 24px;
+		color: #000000;
+        margin-top: 100px;
         display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
+	}
+}
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
-    input {
-        width: 320px;
-        height: 45px;
-        margin: auto;
-        border-radius: 10px;
-        border: 1px solid black;
-        text-align: center;
-        color: grey;
-    }
-    .flex {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 20px;
-    }
-    .btn_enter {
-        width: 320px;
-        height: 45px;
-        color: white;
-        background-color: blue;
-        border-radius: 10px;
-        margin: auto;
-        border: none;
-    }
-    .btn-sign {
-        width: 320px;
-        height: 45px;
-        color: white;
-        background-color: blue;
-        border-radius: 10px;
-        margin: auto;
-        border: none;
-    }
+	background-color: #f0f0f0;
+	height: 70px;
+	.left {
+		margin-left: 40px;
+		display: flex;
+		gap: 12px;
 
-    #sign{
-        text-decoration: none;
-        color: blue;
-        font-size: 17px;
-    }
-    
+		a {
+			text-decoration: none;
+			color: #000000;
+			font-size: 16px;
+		}
+	}
+	.right {
+		margin-right: 40px;
+		display: flex;
+		gap: 10px;
+		a {
+			text-decoration: none;
+			color: #000000;
+			font-size: 16px;
+		}
+	}
 }
