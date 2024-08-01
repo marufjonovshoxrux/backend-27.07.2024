@@ -1,5 +1,5 @@
-export function cards(item) {
-    const cards = document.createElement('.cards')
+export function Cards(item) {
+    // const cards = document.querySelector('.cards')
 
     const card = document.createElement('div')
     const span_visa = document.createElement('span')
@@ -12,8 +12,8 @@ export function cards(item) {
     span_visa.innerText = 'Visa'
     span_rub.innerHTML = 'RUB'
 
-    cards.append(card)
+    // cards.append(card)
     card.append(span_visa, span_rub)
 
-    return cards
+    return card
 }

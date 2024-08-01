@@ -1,6 +1,4 @@
-import { ApiCall } from "../../lib/http.request"
-
-
+import { ApiCall } from '../../lib/http.request.js'
 
 const form = document.forms.namedItem('signin')
 const locale = JSON.parse(localStorage.getItem('user'))
@@ -17,7 +15,7 @@ form.onsubmit = async e => {
 	const users = await apiCall.getData('/users?email=' + user.email)
 	const password = await apiCall.getData('/users?password=' + user.password)
 
-	if (users.data.length > 0 ) {
+	if (users.data.length > 0) {
 		alert('Почта правильно')
 		// return
 	} else {
@@ -31,9 +29,8 @@ form.onsubmit = async e => {
 	}
 
 	if (users.data.length > 0 && password.data.length) {
-		alert("всё правильно")
 		location.assign('/')
-	} 
+	}
 
 	localStorage.setItem('user', JSON.stringify(user))
 }

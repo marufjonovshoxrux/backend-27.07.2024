@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ADD Wallet</title>
+		<link rel="stylesheet" href="../../style.scss" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<center>
+				<h1 class="registar">Добавить кошелек</h1>
+				<form name="wallet">
+					<input type="text" id="name" placeholder="Имя" name="name" />
+                    <input type="text" id="balance" placeholder="Баланс" name="balance">
+					<select name="currency" id="currency">
+						<option value="UZS">UZS</option>
+						<option value="USD">USD</option>
+						<option value="RUB">RUB</option>
+						<option value="EUR">EUR</option>
+					</select>
+					<button class="btn_enter">Добавить</button>
+				</form>
+			</center>
+		</div>
+
+		<script type="module" src="./index.js"></script>
+	</body>
+</html>

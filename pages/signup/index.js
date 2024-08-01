@@ -14,6 +14,9 @@ form.onsubmit = async (e) => {
 	e.preventDefault()
 
 	const user = {
+		id: crypto.randomUUID(),
+		createdAt: new Date(),
+		updatedAt: new Date(),
 		email: new FormData(form).get('email'),
 		names: new FormData(form).get('name'),
 		surname: new FormData(form).get('surname'),
