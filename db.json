@@ -2,102 +2,76 @@
   "users": [],
   "wallets": [
     {
-      "id": "2508fcab-df9a-4a7b-9ca7-f5de2b7f1f34",
-      "createdAt": "2024-08-01T06:02:55.848Z",
-      "updatedAt": "2024-08-01T06:02:55.848Z",
-      "balance": "1000000",
-      "currency": "USD",
-      "name": "Visa"
-    },
-    {
-      "id": "b24fa849-655a-4502-9cf2-0f57eb8878b0",
-      "createdAt": "2024-08-01T06:12:29.508Z",
-      "updatedAt": "2024-08-01T06:12:29.508Z",
-      "balance": "8613",
-      "currency": "RUB",
-      "name": "Shoxrux"
-    },
-    {
-      "id": "e598225f-6da3-446a-9827-eb1c7d31a357",
-      "createdAt": "2024-08-01T06:12:35.433Z",
-      "updatedAt": "2024-08-01T06:12:35.433Z",
+      "id": "a47713de-d5ae-4c7b-9708-20f4d2200b98",
+      "createdAt": "2024-08-02T14:45:51.765Z",
+      "updatedAt": "2024-08-02T14:45:51.765Z",
       "balance": "8613",
       "currency": "USD",
       "name": "Shoxrux"
     },
     {
-      "id": "e4727d96-3001-4067-9937-48d94eb85db8",
-      "createdAt": "2024-08-01T06:13:11.218Z",
-      "updatedAt": "2024-08-01T06:13:11.218Z",
-      "balance": "8613",
-      "currency": "USD",
-      "name": "Shoxrux"
-    },
-    {
-      "id": "e858d42e-4d45-4c65-91ed-c8b8fbda6a89",
-      "createdAt": "2024-08-01T06:14:20.470Z",
-      "updatedAt": "2024-08-01T06:14:20.470Z",
-      "balance": "8613",
-      "currency": "RUB",
-      "name": "Shoxrux"
-    },
-    {
-      "id": "92ef20c7-e70e-4979-87c1-7ba918fd4d9b",
-      "createdAt": "2024-08-01T06:14:25.570Z",
-      "updatedAt": "2024-08-01T06:14:25.570Z",
+      "id": "5b0befcd-d8fc-4f1c-b031-811ae3fc6b39",
+      "createdAt": "2024-08-02T14:46:47.474Z",
+      "updatedAt": "2024-08-02T14:46:47.474Z",
       "balance": "8613",
       "currency": "UZS",
       "name": "Shoxrux"
     },
     {
-      "id": "47621d61-1be4-4df5-a898-5fb2616dc315",
-      "createdAt": "2024-08-01T06:14:47.456Z",
-      "updatedAt": "2024-08-01T06:14:47.456Z",
+      "id": "2e3582f7-88f4-4e85-a736-1257a06a704d",
+      "createdAt": "2024-08-02T14:47:15.500Z",
+      "updatedAt": "2024-08-02T14:47:15.500Z",
       "balance": "8613",
       "currency": "UZS",
       "name": "Shoxrux"
     },
     {
-      "id": "b1705760-fbd7-4297-8a12-a47bbb28833d",
-      "createdAt": "2024-08-01T06:14:51.898Z",
-      "updatedAt": "2024-08-01T06:14:51.898Z",
+      "id": "ea1f56f0-802f-45a0-ba1b-6c114bf87572",
+      "createdAt": "2024-08-02T14:47:20.924Z",
+      "updatedAt": "2024-08-02T14:47:20.924Z",
       "balance": "8613",
       "currency": "UZS",
       "name": "Shoxrux"
     },
     {
-      "id": "89f080cc-a55a-4a29-8bb9-f4ff50b7a2c2",
-      "createdAt": "2024-08-01T06:16:18.427Z",
-      "updatedAt": "2024-08-01T06:16:18.427Z",
+      "id": "8474f7dd-9575-4b09-889e-c0b5032725ba",
+      "createdAt": "2024-08-02T14:47:59.827Z",
+      "updatedAt": "2024-08-02T14:47:59.827Z",
       "balance": "8613",
-      "currency": "USD",
+      "currency": "UZS",
       "name": "Shoxrux"
     },
     {
-      "id": "9049073c-0418-42a0-821a-2a1bf9947d7e",
-      "createdAt": "2024-08-01T06:16:23.347Z",
-      "updatedAt": "2024-08-01T06:16:23.347Z",
+      "id": "1f6db788-8419-41b8-a8a7-1d650e397b20",
+      "createdAt": "2024-08-02T14:48:10.279Z",
+      "updatedAt": "2024-08-02T14:48:10.279Z",
       "balance": "8613",
-      "currency": "USD",
+      "currency": "UZS",
       "name": "Shoxrux"
-    }
-  ],
-  "transaction": [
-    {
-      "id": "5bceb858-33a7-4620-a9e9-c9ea5abece3a",
-      "createdAt": "2024-08-01T06:10:26.322Z",
-      "updatedAt": "2024-08-01T06:10:26.322Z",
-      "wallet": "Visa",
-      "Summa": "8613",
-      "kategoriy": "P2P"
     },
     {
-      "id": "77a51f87-90fc-4504-ba10-b10933de5e58",
-      "createdAt": "2024-08-01T06:14:42.421Z",
-      "updatedAt": "2024-08-01T06:14:42.421Z",
-      "wallet": "Visa",
-      "Summa": "555",
-      "kategoriy": "P2P"
+      "id": "6adefbed-dd13-4146-9fd9-cc6c7b8e8f96",
+      "createdAt": "2024-08-02T14:48:11.813Z",
+      "updatedAt": "2024-08-02T14:48:11.813Z",
+      "balance": "8613",
+      "currency": "UZS",
+      "name": "Shoxrux"
+    },
+    {
+      "id": "4fba3d7d-ba1e-4a00-840b-209be14842f5",
+      "createdAt": "2024-08-02T14:48:12.615Z",
+      "updatedAt": "2024-08-02T14:48:12.615Z",
+      "balance": "8613",
+      "currency": "UZS",
+      "name": "Shoxrux"
+    },
+    {
+      "id": "e2f6723b-5aa4-4345-9cab-b2c6629a112d",
+      "createdAt": "2024-08-02T14:51:18.121Z",
+      "updatedAt": "2024-08-02T14:51:18.121Z",
+      "balance": "8613",
+      "currency": "UZS",
+      "name": "Shoxrux"
     }
   ]
 }

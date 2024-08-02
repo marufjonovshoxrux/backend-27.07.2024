@@ -105,9 +105,13 @@ body {
 		font-size: 24px;
 		font-weight: 500;
 	}
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(4,1fr);
+	}
 	.card {
 		width: 282px;
-		height: 160px;
+		height: 175px;
 		background: linear-gradient(84.37deg, #d7816a 2.27%, #bd4f6c 92.26%);
 		border-radius: 15px;
 		margin-top: 20px;

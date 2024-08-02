@@ -14,6 +14,7 @@ form.onsubmit = async (e) => {
 		wallet: new FormData(form).get('wallet'),
 		Summa: new FormData(form).get('Summa'),
 		kategoriy: new FormData(form).get('kategoriy'),
+		// wallet: locale.id,
 	}
 
 	const res = await apiCall.postData('/transaction', transaction)

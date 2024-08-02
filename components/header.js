@@ -19,10 +19,10 @@ export function Header(item) {
 	a_thread.innerText = 'Мои транзакции'
 	a_email.innerText = 'alexadams@google.com'
 
-	a_first.href = '#'
-	a_second.href = '#'
-	a_thread.href = '#'
-	a_email.href = '#'
+	a_first.href = '/'
+	a_second.href = '/pages/wallets/'
+	a_thread.href = '/pages/transaction/'
+	a_email.href = "#"
 
 	img.src = './svg/logo.svg' && '../../svg/logo.svg'
 	img.alt = 'exit'

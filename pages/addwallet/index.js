@@ -14,7 +14,7 @@ form.onsubmit = async e => {
 		balance: new FormData(form).get('balance'),
 		currency: new FormData(form).get('currency'),
 		name: new FormData(form).get('name'),
-		// userID:
+		// userID: locale.id
 	}
 
 	const res = await apiCall.postData('/wallets', wallets)
@@ -24,12 +24,7 @@ form.onsubmit = async e => {
 		location.assign('/pages/addtransaction/')
 	}
 
-	const wallet = await apiCall.getData('/wallets?name=' + wallets.name)
-
-	if (wallet.data.length > 0) {
-		alert('На это имя регистрация есть')
-		return
-	}
+	
 
 	localStorage.setItem('wallet', JSON.stringify(wallets))
 }
