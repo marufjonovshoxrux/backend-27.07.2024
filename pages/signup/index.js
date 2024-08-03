@@ -21,19 +21,20 @@ form.onsubmit = async (e) => {
 		names: new FormData(form).get('name'),
 		surname: new FormData(form).get('surname'),
 		password: new FormData(form).get('password'),
+		
 	}
 
 	const users = await apiCall.getData('/users?email=' + user.email)
 	
 
 	
-	if (users.data.length > 0) {
+	if (users.length > 0) {
 		alert('На эту почту регистрация есть')
 		return
 	}
 	const res = await apiCall.postData('/users', user)
 	
-	if (res.status === 201) {
+	if (res.status !== 201) {
 		form.reset()
 		location.assign('/pages/signin/')
 	}

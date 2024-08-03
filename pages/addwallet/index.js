@@ -2,9 +2,9 @@ import { ApiCall } from '../../lib/http.request'
 
 const form = document.forms.namedItem('wallet')
 const apiCall = new ApiCall('http://localhost:8080')
-const locale = JSON.parse(localStorage.getItem('wallet'))
+const locale = JSON.parse(localStorage.getItem('user'))
 
-form.onsubmit = async e => {
+form.onsubmit = async (e) => {
 	e.preventDefault()
 
 	const wallets = {
@@ -14,14 +14,14 @@ form.onsubmit = async e => {
 		balance: new FormData(form).get('balance'),
 		currency: new FormData(form).get('currency'),
 		name: new FormData(form).get('name'),
-		// userID: locale.id
+		userID: locale.id,
 	}
 
 	const res = await apiCall.postData('/wallets', wallets)
 
-	if (res.status === 201) {
+	if (res.status !== 201) {
 		form.reset()
-		location.assign('/pages/addtransaction/')
+		location.assign('/pages/wallets/')
 	}
 
 	

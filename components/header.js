@@ -17,15 +17,19 @@ export function Header(item) {
 	a_first.innerText = 'Главная'
 	a_second.innerText = 'Мои кошельки'
 	a_thread.innerText = 'Мои транзакции'
-	a_email.innerText = 'alexadams@google.com'
+	a_email.innerText = "EXIT"
 
 	a_first.href = '/'
 	a_second.href = '/pages/wallets/'
 	a_thread.href = '/pages/transaction/'
-	a_email.href = "#"
+	a_email.href = '/pages/signin/'
 
 	img.src = './svg/logo.svg' && '../../svg/logo.svg'
 	img.alt = 'exit'
+	img.onclick = () => {
+    location.assign('/pages/signin/')
+
+	}
 
 	header.append(nav_left, nav_right)
 	nav_left.append(a_first, a_second, a_thread)

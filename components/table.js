@@ -9,11 +9,11 @@ export function Table(item) {
 
     tr_body.classList.add('tbody')
 
-    td_num.innerHTML = '1'
-    visa.innerHTML = 'VISA'
-    auto.innerHTML = 'Автомобиль'
-    price.innerHTML = '414,000,000'
-    days.innerHTML = '4 дня назад'
+    td_num.innerHTML = item.id
+    visa.innerHTML = item.wallet
+    auto.innerHTML = item.kategoriy
+    price.innerHTML = item.Summa + '$'
+    days.innerHTML = item.updatedAt
 
     tr_body.append(td_num,visa,auto,price,days)
 
