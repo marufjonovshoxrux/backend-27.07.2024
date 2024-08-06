@@ -4,6 +4,23 @@ const form = document.forms.namedItem('wallet')
 const apiCall = new ApiCall('http://localhost:8080')
 const locale = JSON.parse(localStorage.getItem('user'))
 
+const select = document.querySelector('#currency')
+
+const res = await fetch('https://api.apilayer.com/fixer/symbols', {
+	method: 'get',
+	headers: {
+		apikey: 'j2pLT7yrORYlBVoSvkYpj4dXnY4GaQJj',
+	},
+})
+
+const data = await res.json()
+
+for(let key in data.symbols ) {
+	select.innerHTML += `
+		<option value="${key}">${key}: ${data.symbols[key]}</option>
+	`
+}
+
 form.onsubmit = async (e) => {
 	e.preventDefault()
 

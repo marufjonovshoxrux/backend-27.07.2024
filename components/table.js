@@ -10,7 +10,7 @@ export function Table(item) {
     tr_body.classList.add('tbody')
 
     td_num.innerHTML = item.id
-    visa.innerHTML = item.wallet
+    visa.innerHTML = item.type
     auto.innerHTML = item.kategoriy
     price.innerHTML = item.Summa + '$'
     days.innerHTML = item.updatedAt

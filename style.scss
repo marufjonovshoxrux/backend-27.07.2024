@@ -107,7 +107,7 @@ body {
 	}
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(4,1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
 	.card {
 		width: 282px;
@@ -119,6 +119,9 @@ body {
 		color: white;
 		span {
 			padding: 23px;
+		}
+		.balance {
+			margin-right: -40px;
 		}
 		.Visa {
 			font-size: 24px;
@@ -142,7 +145,7 @@ body {
 		margin-top: 100px;
 		display: flex;
 	}
-	.btn_add  {
+	.btn_add {
 		width: 438px;
 		height: 56px;
 		background-color: #0047ff;
@@ -160,7 +163,6 @@ body {
 		border: none;
 		margin-top: 30px;
 	}
-	
 
 	#currency {
 		margin: auto;
@@ -169,6 +171,9 @@ body {
 		border-radius: 10px;
 		border: 1px solid black;
 		text-align: center;
+	}
+	.show {
+		border-color: red;
 	}
 
 	table {
@@ -188,6 +193,7 @@ body {
 				padding-bottom: 15px;
 				border-bottom: 1px solid #b9c0d1;
 				font-weight: 600;
+				padding-top: 15px;
 			}
 		}
 	}
