@@ -12,9 +12,9 @@ const [data] = sum
 
 Sum.innerHTML = data.balance
 
-if (data.balance >= Summa.value) {
-	Summa.classList.add('show')
-}
+// if (data.balance >= Summa.value) {
+// 	Summa.classList.add('show')
+// }
 
 form.onsubmit = async e => {
 	e.preventDefault()
@@ -30,6 +30,11 @@ form.onsubmit = async e => {
 	}
 
 	const res = await apiCall.postData('/transaction', transaction)
+
+
+	if (data.balance <= Summa.value) {
+	Summa.classList.add('show')
+}
 
 	if (res.status !== 201) {
 		form.reset()
