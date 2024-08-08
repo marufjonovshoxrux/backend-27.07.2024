@@ -1,20 +1,28 @@
 import { ApiCall } from '../../lib/http.request'
+import { reload } from '../../lib/utils'
 
 const form = document.forms.namedItem('transaction')
 const apiCall = new ApiCall('http://localhost:8080')
 const locale = JSON.parse(localStorage.getItem('wallet'))
-const Sum = document.querySelector('.sum')
+const price = document.querySelector('.price')
 const Summa = document.querySelector('#Summa')
+const currencys = document.querySelector('#currency')
 
 const sum = await apiCall.getData('/wallets')
 
 const [data] = sum
 
-Sum.innerHTML = data.balance
+function userTranaction(item) {
+	const option = document.createElement('option')
+	option.innerHTML = item.name
+	// option.value = item.id
 
-if (data.balance >= Summa.value) {
-	Summa.classList.add('show')
+	currencys.append(option)
 }
+
+reload(sum, currencys, userTranaction)
+
+price.innerHTML = 'Сумма которая есть у вас: ' + data.balance
 
 form.onsubmit = async e => {
 	e.preventDefault()
@@ -28,11 +36,18 @@ form.onsubmit = async e => {
 		kategoriy: new FormData(form).get('kategoriy'),
 		walletID: locale.id,
 	}
+	console.log(transaction.walletID)
 
-	const res = await apiCall.postData('/transaction', transaction)
+	
+	const data = await apiCall.getData('/wallets/' + transaction.walletID)	
 
-	if (res.status !== 201) {
-		form.reset()
+	delete data.id
+
+	transaction.wallets = data
+	
+	if (transaction.total > +data.balance) {
+		Summa.style.border = '1px solid red'
+
 		Toastify({
 			text: 'Трансакция Успешна',
 			duration: 3000,
@@ -43,32 +58,21 @@ form.onsubmit = async e => {
 			position: 'right',
 			stopOnFocus: true,
 			style: {
-				background: 'linear-gradient(to right, red, blue)',
+				background: 'linear-gradient(to right, red, red)',
 			},
 			onClick: function () {},
 		}).showToast()
-		setTimeout(() => {
-			location.assign('/pages/transaction/')
-		}, 2000)
-	} else {
-		Toastify({
-			text: 'Трансакция Успешна',
-			duration: 3000,
-			destination: 'https://github.com/apvarun/toastify-js',
-			newWindow: true,
-			close: true,
-			gravity: 'top',
-			position: 'right',
-			stopOnFocus: true,
-			style: {
-				background: 'linear-gradient(to right, red, blue)',
-			},
-			onClick: function () {},
-		}).showToast()
-		setTimeout(() => {
-			location.assign('/pages/transaction/')
-		}, 2000)
-	}
+	} 
+	
+	const total = data.balance - transaction.total
+	await apiCall.patchData('/wallets/' + transaction.walletID, {balance: total})
+	await apiCall.postData('/transaction', transaction)
+	
 
+	
+	
 	localStorage.setItem('transaction', JSON.stringify(transaction))
+
+	form.reset()
+	location.assign('/')
 }

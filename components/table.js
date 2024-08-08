@@ -1,3 +1,5 @@
+import moment from "moment"
+
 export function Table(item) {
    
     const tr_body = document.createElement('tr')
@@ -12,8 +14,9 @@ export function Table(item) {
     td_num.innerHTML = item.id
     visa.innerHTML = item.type
     auto.innerHTML = item.kategoriy
-    price.innerHTML = item.Summa + '$'
-    days.innerHTML = item.updatedAt
+    price.innerHTML = Number(item.Summa).toLocaleString('en')
+
+    days.innerHTML = moment(item.createdAt).fromNow()
 
     tr_body.append(td_num,visa,auto,price,days)
 

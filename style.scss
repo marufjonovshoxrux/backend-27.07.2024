@@ -173,7 +173,8 @@ body {
 		text-align: center;
 	}
 	.show {
-		border-color: red;
+		background-color: black;
+		color: white;
 	}
 
 	table {
@@ -195,6 +196,96 @@ body {
 				font-weight: 600;
 				padding-top: 15px;
 			}
+		}
+	}
+}
+
+.container {
+	.Payment {
+		width: 1200px;
+		min-height: 250px;
+		border: 1px solid grey;
+		border-radius: 5px;
+		padding: 20px;
+		
+		.payment_cards {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+
+			.payment_card {
+				width: 500px;
+				height: 60px;
+				border-radius: 5px;
+				border: 1px solid grey;
+				margin-top: 40px;
+				padding: 10px 15px;
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+			}
+		}
+	}
+
+	.history_currency {
+		width: 1200px;
+		min-height: 200px;
+		margin-top: 40px;
+		display: flex;
+		gap: 40px;
+		.history {
+			width: 580px;
+			min-height: 200px;
+			border: 1px solid grey;
+			border-radius: 5px;
+			padding: 20px;
+
+			.selects {
+				margin-top: 40px;
+				margin-bottom: 20px;
+				select {
+					width: 260px;
+					height: 30px;
+					border: 1px solid grey;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+
+	.currency {
+		width: 580px;
+		min-height: 400px;
+		border-radius: 5px;
+		border: 1px solid grey;
+		padding: 20px;
+		
+		select {
+			margin-top: 40px;
+			width: 260px;
+			height: 30px;
+			border: 1px solid grey;
+			border-radius: 5px;
+			
+		}
+
+		#Summa {
+			margin-top: 30px;
+			border: 1px solid grey;
+			border-radius: 5px;
+			width: 450px;
+			height: 35px;
+			text-align: start;
+			padding: 10px;
+		}
+
+		.btn_convert {
+			width: 70px;
+			height: 35px;
+			border: none;
+			background-color:black;
+			color: white;
+			border-radius: 5px;
+
 		}
 	}
 }

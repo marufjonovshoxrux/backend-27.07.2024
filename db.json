@@ -1,5 +1,59 @@
 {
-	"users": [],
-	"wallets": [],
-	"transaction": []
+  "users": [],
+  "wallets": [
+    {
+      "id": "6f7db257-4f12-492c-9f93-50267934fcb7",
+      "createdAt": "2024-08-07T18:17:02.440Z",
+      "updatedAt": "2024-08-07T18:17:02.440Z",
+      "balance": "8613",
+      "currency": "AED",
+      "name": "Visa",
+      "userID": "97897dbd-65c2-4764-8b7e-26386158d0a5"
+    },
+    {
+      "id": "b175b4d3-baed-457d-a896-feed288532f9",
+      "createdAt": "2024-08-07T18:22:20.943Z",
+      "updatedAt": "2024-08-07T18:22:20.943Z",
+      "balance": null,
+      "currency": "BOB",
+      "name": "HUMO",
+      "userID": "97897dbd-65c2-4764-8b7e-26386158d0a5"
+    }
+  ],
+  "transaction": [
+    {
+      "id": "c578fb48-5565-4b57-b22f-9c17cc7cee28",
+      "createdAt": "2024-08-08T05:04:01.895Z",
+      "updatedAt": "2024-08-08T05:04:01.895Z",
+      "type": "HUMO",
+      "Summa": "1",
+      "kategoriy": "auto",
+      "walletID": "b175b4d3-baed-457d-a896-feed288532f9",
+      "wallets": {
+        "createdAt": "2024-08-07T18:22:20.943Z",
+        "updatedAt": "2024-08-07T18:22:20.943Z",
+        "balance": null,
+        "currency": "BOB",
+        "name": "HUMO",
+        "userID": "97897dbd-65c2-4764-8b7e-26386158d0a5"
+      }
+    },
+    {
+      "id": "c6abb751-0b89-4d4f-a816-dcb2a2c21194",
+      "createdAt": "2024-08-08T05:04:10.688Z",
+      "updatedAt": "2024-08-08T05:04:10.688Z",
+      "type": "Visa",
+      "Summa": "1000",
+      "kategoriy": "1",
+      "walletID": "b175b4d3-baed-457d-a896-feed288532f9",
+      "wallets": {
+        "createdAt": "2024-08-07T18:22:20.943Z",
+        "updatedAt": "2024-08-07T18:22:20.943Z",
+        "balance": null,
+        "currency": "BOB",
+        "name": "HUMO",
+        "userID": "97897dbd-65c2-4764-8b7e-26386158d0a5"
+      }
+    }
+  ]
 }
