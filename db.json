@@ -18,6 +18,15 @@
       "currency": "BOB",
       "name": "HUMO",
       "userID": "97897dbd-65c2-4764-8b7e-26386158d0a5"
+    },
+    {
+      "id": "98baeda0-ab28-4a9a-b408-3ac611dfc82d",
+      "createdAt": "2024-08-09T17:44:11.627Z",
+      "updatedAt": "2024-08-09T17:44:11.627Z",
+      "balance": "100",
+      "currency": null,
+      "name": "Shoxrux",
+      "userID": "59db16a4-121a-45fc-83d3-885d8191a2ff"
     }
   ],
   "transaction": [

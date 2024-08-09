@@ -17,14 +17,8 @@ function userTranaction(item) {
 	option.innerHTML = item.name
 	// option.value = item.id
 
-<<<<<<< HEAD
 	currencys.append(option)
 }
-=======
-// if (data.balance >= Summa.value) {
-// 	Summa.classList.add('show')
-// }
->>>>>>> 615f9371cd779281ea98e00664af537badeb7287
 
 reload(sum, currencys, userTranaction)
 
@@ -44,51 +38,47 @@ form.onsubmit = async e => {
 	}
 	console.log(transaction.walletID)
 
-	
-	const data = await apiCall.getData('/wallets/' + transaction.walletID)	
+	const data = await apiCall.getData('/wallets/' + transaction.walletID)
 
 	delete data.id
 
 	transaction.wallets = data
-	
+
 	if (transaction.total > +data.balance) {
 		Summa.style.border = '1px solid red'
 
-<<<<<<< HEAD
-=======
+		if (data.balance <= Summa.value) {
+			Summa.classList.add('show')
+		}
 
-	if (data.balance <= Summa.value) {
-	Summa.classList.add('show')
-}
+		if (res.status !== 201) {
+			form.reset()
 
-	if (res.status !== 201) {
+			Toastify({
+				text: 'Трансакция Успешна',
+				duration: 3000,
+				destination: 'https://github.com/apvarun/toastify-js',
+				newWindow: true,
+				close: true,
+				gravity: 'top',
+				position: 'right',
+				stopOnFocus: true,
+				style: {
+					background: 'linear-gradient(to right, red, red)',
+				},
+				onClick: function () {},
+			}).showToast()
+		}
+
+		const total = data.balance - transaction.total
+		await apiCall.patchData('/wallets/' + transaction.walletID, {
+			balance: total,
+		})
+		await apiCall.postData('/transaction', transaction)
+
+		localStorage.setItem('transaction', JSON.stringify(transaction))
+
 		form.reset()
->>>>>>> 615f9371cd779281ea98e00664af537badeb7287
-		Toastify({
-			text: 'Трансакция Успешна',
-			duration: 3000,
-			destination: 'https://github.com/apvarun/toastify-js',
-			newWindow: true,
-			close: true,
-			gravity: 'top',
-			position: 'right',
-			stopOnFocus: true,
-			style: {
-				background: 'linear-gradient(to right, red, red)',
-			},
-			onClick: function () {},
-		}).showToast()
-	} 
-	
-	const total = data.balance - transaction.total
-	await apiCall.patchData('/wallets/' + transaction.walletID, {balance: total})
-	await apiCall.postData('/transaction', transaction)
-	
-
-	
-	
-	localStorage.setItem('transaction', JSON.stringify(transaction))
-
-	form.reset()
-	location.assign('/')
+		location.assign('/')
+	}
 }
