@@ -17,6 +17,15 @@
       "names": "Shoxrux",
       "surname": "Шохрух",
       "password": "8613"
+    },
+    {
+      "id": "2e30a6bb-2a7b-4cf0-8daa-5b7bd3461d57",
+      "createdAt": "2024-08-10T08:56:47.891Z",
+      "updatedAt": "2024-08-10T08:56:47.891Z",
+      "email": "dsarifkulo021@gmail.com",
+      "names": "Daler",
+      "surname": "Sharifkulov",
+      "password": "1234DAler"
     }
   ],
   "wallets": [
@@ -46,6 +55,24 @@
       "currency": "BHD",
       "name": "Shoxrux",
       "userID": "c159f86e-fcba-4527-94f6-07e9ac6424e8"
+    },
+    {
+      "id": "af973056-59a1-49a0-9a8f-43dcc256c4cb",
+      "createdAt": "2024-08-10T08:58:21.083Z",
+      "updatedAt": "2024-08-10T08:58:21.083Z",
+      "balance": "100",
+      "currency": null,
+      "name": "Visa",
+      "userID": "2e30a6bb-2a7b-4cf0-8daa-5b7bd3461d57"
+    },
+    {
+      "id": "d349737a-7d99-4875-b8ad-2853bd576dff",
+      "createdAt": "2024-08-10T08:58:34.301Z",
+      "updatedAt": "2024-08-10T08:58:34.301Z",
+      "balance": 99998,
+      "currency": null,
+      "name": "MASTERCARD",
+      "userID": "2e30a6bb-2a7b-4cf0-8daa-5b7bd3461d57"
     }
   ],
   "transaction": []

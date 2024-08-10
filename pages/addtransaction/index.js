@@ -35,12 +35,11 @@ form.onsubmit = async (e) => {
 		createdAt: new Date(),
 		updatedAt: new Date(),
 		type: new FormData(form).get('type'),
-		Summa: new FormData(form).get('Summa'),
+		total: new FormData(form).get('total'),
 		kategoriy: new FormData(form).get('kategoriy'),
 		walletID: locale.id,
 		userID: user.id,
 	}
-	console.log(transaction.walletID)
 
 	const data = await apiCall.getData('/wallets/' + transaction.walletID)
 
@@ -48,15 +47,17 @@ form.onsubmit = async (e) => {
 
 	transaction.wallets = data
 
-	if (transaction.total > +data.balance) {
-		Summa.style.border = '1px solid red'
+	console.log(transaction.total, +data.balance);
+	
 
+	if (transaction.total <= +data.balance) {
+		Summa.style.border = '1px solid red'
 		form.reset()
 		
 		location.assign('/')
 
 		Toastify({
-			text: 'Трансакция Успешна',
+			text: 'Транзакция Успешна',
 			duration: 3000,
 			destination: 'https://github.com/apvarun/toastify-js',
 			newWindow: true,
