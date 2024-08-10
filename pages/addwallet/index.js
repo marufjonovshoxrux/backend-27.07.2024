@@ -9,7 +9,7 @@ const select = document.querySelector('#currency')
 const res = await fetch('https://api.apilayer.com/fixer/symbols', {
 	method: 'get',
 	headers: {
-		apikey: 'j2pLT7yrORYlBVoSvkYpj4dXnY4GaQJj',
+		apikey: 'oHOwMCakYel19w2RLASK0GUjtTV8OlfO',
 	},
 })
 

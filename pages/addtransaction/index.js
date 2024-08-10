@@ -4,6 +4,9 @@ import { reload } from '../../lib/utils'
 const form = document.forms.namedItem('transaction')
 const apiCall = new ApiCall('http://localhost:8080')
 const locale = JSON.parse(localStorage.getItem('wallet'))
+const user = JSON.parse(localStorage.getItem('user'))
+const res = await apiCall.getData('/wallets?userId=' + user.id)
+
 const price = document.querySelector('.price')
 const Summa = document.querySelector('#Summa')
 const currencys = document.querySelector('#currency')
@@ -20,11 +23,11 @@ function userTranaction(item) {
 	currencys.append(option)
 }
 
-reload(sum, currencys, userTranaction)
+reload(res, currencys, userTranaction)
 
 price.innerHTML = 'Сумма которая есть у вас: ' + data.balance
 
-form.onsubmit = async e => {
+form.onsubmit = async (e) => {
 	e.preventDefault()
 
 	const transaction = {
@@ -35,6 +38,7 @@ form.onsubmit = async e => {
 		Summa: new FormData(form).get('Summa'),
 		kategoriy: new FormData(form).get('kategoriy'),
 		walletID: locale.id,
+		userID: user.id,
 	}
 	console.log(transaction.walletID)
 
@@ -47,28 +51,24 @@ form.onsubmit = async e => {
 	if (transaction.total > +data.balance) {
 		Summa.style.border = '1px solid red'
 
-		if (data.balance <= Summa.value) {
-			Summa.classList.add('show')
-		}
+		form.reset()
+		
+		location.assign('/')
 
-		if (res.status !== 201) {
-			form.reset()
-
-			Toastify({
-				text: 'Трансакция Успешна',
-				duration: 3000,
-				destination: 'https://github.com/apvarun/toastify-js',
-				newWindow: true,
-				close: true,
-				gravity: 'top',
-				position: 'right',
-				stopOnFocus: true,
-				style: {
-					background: 'linear-gradient(to right, red, red)',
-				},
-				onClick: function () {},
-			}).showToast()
-		}
+		Toastify({
+			text: 'Трансакция Успешна',
+			duration: 3000,
+			destination: 'https://github.com/apvarun/toastify-js',
+			newWindow: true,
+			close: true,
+			gravity: 'top',
+			position: 'right',
+			stopOnFocus: true,
+			style: {
+				background: 'linear-gradient(to right, red, red)',
+			},
+			onClick: function () {},
+		}).showToast()
 
 		const total = data.balance - transaction.total
 		await apiCall.patchData('/wallets/' + transaction.walletID, {
@@ -82,3 +82,5 @@ form.onsubmit = async e => {
 		location.assign('/')
 	}
 }
+
+

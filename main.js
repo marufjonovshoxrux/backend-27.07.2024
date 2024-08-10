@@ -7,12 +7,14 @@ import { ApiCall } from './lib/http.request.js'
 
 const apiCall = new ApiCall('http://localhost:8080')
 const locale = JSON.parse(localStorage.getItem('user'))
+const walletid = JSON.parse(localStorage.getItem('wallet'))
+
 
 const wallet = await apiCall.getData('/wallets?userID=' + locale.id)
 
-const trans_action = await apiCall.getData('/transaction')
+const trans_action = await apiCall.getData('/transaction?userID=' + walletid.id)
 
-const user = await apiCall.getData('/users')
+
 
 const name_h1 = document.querySelector('.name_h1')
 const email_a = document.querySelector('.email')

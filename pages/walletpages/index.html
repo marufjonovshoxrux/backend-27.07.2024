@@ -1,92 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script defer src="/lib/police.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Document</title>
-    <link rel="stylesheet" href="../../style.scss">
-    <link
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script defer src="/lib/police.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="../../style.scss" />
+		<link
 			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
 			rel="stylesheet"
 		/>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Dashboard</h1>
 
-</head>
-<body>
-    
-    <div class="container"> 
-        <h1>Dashboard</h1>
+			<div class="Payment">
+				<h2>Payment Methods</h2>
+				<div class="payment_cards"></div>
+			</div>
 
-        <div class="Payment">
-            <h2>Payment Methods</h2>
-            <div class="payment_cards">
-            </div>
-        </div>
+			<div class="history_currency">
+				<div class="history">
+					<h2>Transaction History</h2>
+					<div class="selects">
+						<select name="currency_one" id="currency_one">
+							<option value="USD">USD</option>
+							<option value="EUR">EUR</option>
+							<option value="UZS">UZS</option>
+						</select>
 
+						<select name="last_days" id="last_days">
+							<option value="last_30">Last 30 days</option>
+							<option value="last_week">Last week</option>
+							<option value="last_year">Last year</option>
+						</select>
+					</div>
 
+					<canvas id="myChart" width="400" height="200"></canvas>
+				</div>
 
-        <div class="history_currency">
-            <div class="history">
-                <h2>Transaction History</h2>
-                <div class="selects">
-                    <select name="currency_one" id="currency_one">
-                        <option value="USD">USD</option>
-                        <option value="EUR">EUR</option>
-                        <option value="UZS">UZS</option>
-                    </select>
+				<div class="currency">
+					<h2>Currency Conversion</h2>
+					<select name="currency_two" id="currency_two"></select>
 
-                    <select name="last_days" id="last_days">
-                        <option value="last_30">Last 30 days</option>
-                        <option value="last_week">Last week</option>
-                        <option value="last_year">Last year</option>
-                    </select>
-                </div>
+					<select name="currency_three" id="currency_three"></select>
 
-                <canvas id="myChart" width="400" height="200"></canvas>
-            </div>
+					<form name="convert">
+						<input type="number" placeholder="Summa" id="Summa" name="Summa" />
+						<button class="btn_convert">Convert</button>
+					</form>
 
+					<p id="result">result</p>
+				</div>
+			</div>
 
-            <div class="currency">
-                <h2>Currency Conversion</h2>
-                <select name="currency_two" id="currency_two">
-                        <option value="USD">USD</option>
-                        <option value="EUR">EUR</option>
-                        <option value="UZS">UZS</option>
-                    </select>
+			<div class="card" style="margin-top: 30px; margin-bottom: 50px">
+				<span class="Visa">Visa</span>
+				<span class="balance"> 8613 </span>
+				<span>AED</span>
+			</div>
+		</div>
 
-                    <select name="currency_three" id="currency_three">
-                        <option value="USD">USD</option>
-                        <option value="EUR">EUR</option>
-                        <option value="UZS">UZS</option>
-                    </select>
-
-                    <input type="number" placeholder="Summa" id="Summa" name="Summa">
-                    <button class="btn_convert">Convert</button>
-            </div>
-
-           
-
-        </div>
-
-         <div class="card" style="margin-top: 30px; margin-bottom: 50px;">
-                <span class="Visa">Visa</span>
-                <span class="balance">
-                    8613
-                </span>
-                <span>AED</span>
-            </div>
-    </div>
-
-    <script type="text/javascript" src="vanilla-tilt.js"></script>
-    <script type="text/javascript">
-	VanillaTilt.init(document.querySelector(".card"), {
-		max: 25,
-		speed: 400
-	});
-	
-	
-</script>
-    <script type="module" src="index.js"></script>
-</body>
+		<script type="text/javascript" src="vanilla-tilt.js"></script>
+		<script type="text/javascript">
+			VanillaTilt.init(document.querySelector('.card'), {
+				max: 25,
+				speed: 400,
+			})
+		</script>
+		<script type="module" src="index.js"></script>
+	</body>
 </html>

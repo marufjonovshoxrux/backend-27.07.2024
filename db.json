@@ -1,68 +1,52 @@
 {
-  "users": [],
-  "wallets": [
+  "users": [
     {
-      "id": "6f7db257-4f12-492c-9f93-50267934fcb7",
-      "createdAt": "2024-08-07T18:17:02.440Z",
-      "updatedAt": "2024-08-07T18:17:02.440Z",
-      "balance": "8613",
-      "currency": "AED",
-      "name": "Visa",
-      "userID": "97897dbd-65c2-4764-8b7e-26386158d0a5"
+      "id": "6a9f71df-1cae-4356-9dc9-ad75143f525d",
+      "createdAt": "2024-08-10T04:52:36.927Z",
+      "updatedAt": "2024-08-10T04:52:36.927Z",
+      "email": "shokha0502@gmail.com",
+      "names": "Shoxrux",
+      "surname": "Marufjonov",
+      "password": "8613"
     },
     {
-      "id": "b175b4d3-baed-457d-a896-feed288532f9",
-      "createdAt": "2024-08-07T18:22:20.943Z",
-      "updatedAt": "2024-08-07T18:22:20.943Z",
-      "balance": null,
-      "currency": "BOB",
-      "name": "HUMO",
-      "userID": "97897dbd-65c2-4764-8b7e-26386158d0a5"
-    },
-    {
-      "id": "98baeda0-ab28-4a9a-b408-3ac611dfc82d",
-      "createdAt": "2024-08-09T17:44:11.627Z",
-      "updatedAt": "2024-08-09T17:44:11.627Z",
-      "balance": "100",
-      "currency": null,
-      "name": "Shoxrux",
-      "userID": "59db16a4-121a-45fc-83d3-885d8191a2ff"
+      "id": "c159f86e-fcba-4527-94f6-07e9ac6424e8",
+      "createdAt": "2024-08-10T05:59:16.955Z",
+      "updatedAt": "2024-08-10T05:59:16.955Z",
+      "email": "shokha05002@gmail.com",
+      "names": "Shoxrux",
+      "surname": "Шохрух",
+      "password": "8613"
     }
   ],
-  "transaction": [
+  "wallets": [
     {
-      "id": "c578fb48-5565-4b57-b22f-9c17cc7cee28",
-      "createdAt": "2024-08-08T05:04:01.895Z",
-      "updatedAt": "2024-08-08T05:04:01.895Z",
-      "type": "HUMO",
-      "Summa": "1",
-      "kategoriy": "auto",
-      "walletID": "b175b4d3-baed-457d-a896-feed288532f9",
-      "wallets": {
-        "createdAt": "2024-08-07T18:22:20.943Z",
-        "updatedAt": "2024-08-07T18:22:20.943Z",
-        "balance": null,
-        "currency": "BOB",
-        "name": "HUMO",
-        "userID": "97897dbd-65c2-4764-8b7e-26386158d0a5"
-      }
+      "id": "1c1d25b5-df32-4b5a-90c5-73fa6626b0de",
+      "createdAt": "2024-08-10T04:53:12.367Z",
+      "updatedAt": "2024-08-10T04:53:12.367Z",
+      "balance": "100",
+      "currency": "MMK",
+      "name": "Shoxrux",
+      "userID": "6a9f71df-1cae-4356-9dc9-ad75143f525d"
     },
     {
-      "id": "c6abb751-0b89-4d4f-a816-dcb2a2c21194",
-      "createdAt": "2024-08-08T05:04:10.688Z",
-      "updatedAt": "2024-08-08T05:04:10.688Z",
-      "type": "Visa",
-      "Summa": "1000",
-      "kategoriy": "1",
-      "walletID": "b175b4d3-baed-457d-a896-feed288532f9",
-      "wallets": {
-        "createdAt": "2024-08-07T18:22:20.943Z",
-        "updatedAt": "2024-08-07T18:22:20.943Z",
-        "balance": null,
-        "currency": "BOB",
-        "name": "HUMO",
-        "userID": "97897dbd-65c2-4764-8b7e-26386158d0a5"
-      }
+      "id": "1a12d630-8a1c-4824-9e3d-b45e87f7c952",
+      "createdAt": "2024-08-10T05:15:34.382Z",
+      "updatedAt": "2024-08-10T05:15:34.382Z",
+      "balance": "10000",
+      "currency": "AED",
+      "name": "aaaa",
+      "userID": "6a9f71df-1cae-4356-9dc9-ad75143f525d"
+    },
+    {
+      "id": "26ac7997-f607-4e4a-8462-11aecbe4e6be",
+      "createdAt": "2024-08-10T05:59:31.877Z",
+      "updatedAt": "2024-08-10T05:59:31.877Z",
+      "balance": "100",
+      "currency": "BHD",
+      "name": "Shoxrux",
+      "userID": "c159f86e-fcba-4527-94f6-07e9ac6424e8"
     }
-  ]
+  ],
+  "transaction": []
 }
