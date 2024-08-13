@@ -8,8 +8,8 @@ import { reload } from "../../lib/utils.js"
 const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
 const locale = JSON.parse(localStorage.getItem('user'))
 
-const wallet = await apiCall.getData('/wallets?userID=' + locale.id)
-const user = await apiCall.getData('/users')
+const wallet =  apiCall.getData('/wallets?userID=' + locale.id)
+const user =  apiCall.getData('/users')
 
 const header = document.querySelector('.header')
 const cards = document.querySelector('.cards')

@@ -6,14 +6,14 @@ const locale = JSON.parse(localStorage.getItem('user'))
 
 const select = document.querySelector('#currency')
 
-const res = await fetch('https://api.apilayer.com/exchangerates_data/symbols', {
+const res = fetch('https://api.apilayer.com/exchangerates_data/symbols', {
 	method: 'get',
 	headers: {
 		// apikey: 'oHOwMCakYel19w2RLASK0GUjtTV8OlfO',
 	},
 })
 
-const data = await res.json()
+const data = res.json()
 
 for(let key in data.symbols ) {
 	select.innerHTML += `

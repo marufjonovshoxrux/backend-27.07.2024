@@ -14,9 +14,9 @@ const bank_apiCall = new ApiCall(
 )
 const locale = JSON.parse(localStorage.getItem('user'))
 
-const res = await apiCall.getData('/wallets/' + id)
+const res =  apiCall.getData('/wallets/' + id)
 
-const wallet = await apiCall.getData('/wallets?userID=' + locale.id)
+const wallet =  apiCall.getData('/wallets?userID=' + locale.id)
 
 
 
@@ -26,7 +26,7 @@ h1.innerHTML = 'Dashboard ' + res.name
 
 const payment_cards = document.querySelector('.payment_cards')
 
-function pay_cards(item) {
+async function pay_cards(item) {
 	const payment_card = document.createElement('div')
 	const span_card = document.createElement('span')
 	const span_at = document.createElement('span')

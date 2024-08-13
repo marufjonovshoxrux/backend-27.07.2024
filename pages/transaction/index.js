@@ -9,7 +9,7 @@ const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
 const locale = JSON.parse(localStorage.getItem('user'))
 
 const trans_action = await apiCall.getData('/transaction')
-const user = await apiCall.getData('/users')
+const user = apiCall.getData('/users')
 
 
 const header = document.querySelector('.header')

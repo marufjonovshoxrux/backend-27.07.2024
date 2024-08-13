@@ -24,7 +24,7 @@ form.onsubmit = async (e) => {
 		
 	}
 
-	const users = await apiCall.getData('/users?email=' + user.email)
+	const users =  apiCall.getData('/users?email=' + user.email)
 	
 
 	

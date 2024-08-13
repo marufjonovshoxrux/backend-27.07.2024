@@ -3,7 +3,7 @@ import { ApiCall } from '../../lib/http.request.js'
 const form = document.forms.namedItem('signin')
 const locale = JSON.parse(localStorage.getItem('user'))
 const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
-const users2 = await apiCall.getData('/users')
+const users2 =  apiCall.getData('/users')
 
 form.onsubmit = async e => {
 	e.preventDefault()
@@ -14,8 +14,8 @@ form.onsubmit = async e => {
 		
 	}
 
-	const users = await apiCall.getData('/users?email=' + signin.email)
-	const password = await apiCall.getData('/users?password=' + signin.password)
+	const users = apiCall.getData('/users?email=' + signin.email)
+	const password =  apiCall.getData('/users?password=' + signin.password)
 
 	if (users.length > 0) {
 		alert('Почта правильно')

@@ -5,13 +5,13 @@ const form = document.forms.namedItem('transaction')
 const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
 const locale = JSON.parse(localStorage.getItem('wallet'))
 const user = JSON.parse(localStorage.getItem('user'))
-const res = await apiCall.getData('/wallets?userId=' + user.id)
+const res = apiCall.getData('/wallets?userId=' + user.id)
 
 const price = document.querySelector('.price')
 const Summa = document.querySelector('#Summa')
 const currencys = document.querySelector('#currency')
 
-const sum = await apiCall.getData('/wallets')
+const sum = apiCall.getData('/wallets')
 
 const [data] = sum
 
