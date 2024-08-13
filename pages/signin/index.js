@@ -2,7 +2,7 @@ import { ApiCall } from '../../lib/http.request.js'
 
 const form = document.forms.namedItem('signin')
 const locale = JSON.parse(localStorage.getItem('user'))
-const apiCall = new ApiCall('http://localhost:8080')
+const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
 const users2 = await apiCall.getData('/users')
 
 form.onsubmit = async e => {

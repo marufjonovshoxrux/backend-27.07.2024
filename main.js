@@ -5,7 +5,7 @@ import { users } from './lib/users.js'
 import { reload } from './lib/utils.js'
 import { ApiCall } from './lib/http.request.js'
 
-const apiCall = new ApiCall('http://localhost:8080')
+const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
 const locale = JSON.parse(localStorage.getItem('user'))
 const wallet = await apiCall.getData('/wallets?userID=' + locale.id)
 

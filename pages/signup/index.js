@@ -7,7 +7,7 @@ const form = document.forms.namedItem('signup')
 const btn = document.querySelector('.btn_enter')
 const locale = JSON.parse(localStorage.getItem('user'))
 
-const apiCall = new ApiCall('http://localhost:8080')
+const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
 
 
 form.onsubmit = async (e) => {

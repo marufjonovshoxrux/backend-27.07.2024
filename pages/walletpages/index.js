@@ -1,17 +1,26 @@
 import moment from 'moment'
 import { ApiCall } from '../../lib/http.request'
 import { reload } from '../../lib/utils.js'
+import Chart from 'chart.js/auto'
 
 const id = location.search.split('=').at(-1)
 
 const h1 = document.querySelector('h1')
 
-const apiCall = new ApiCall('http://localhost:8080')
+const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
+const bank_apiCall = new ApiCall(
+	`https://api.apilayer.com/exchangerates_data
+`
+)
 const locale = JSON.parse(localStorage.getItem('user'))
 
 const res = await apiCall.getData('/wallets/' + id)
 
 const wallet = await apiCall.getData('/wallets?userID=' + locale.id)
+
+
+
+
 
 h1.innerHTML = 'Dashboard ' + res.name
 
@@ -38,32 +47,29 @@ function pay_cards(item) {
 		payment_card.classList.toggle('show')
 	}
 
+	payment_card.onclick = () => {
+		location.assign('/pages/walletpages/?id=' + item.id)
+	}
 	return payment_card
 }
 
 reload(wallet, payment_cards, pay_cards)
 
-var ctx = document.getElementById('myChart').getContext('2d')
-var myChart = new Chart(ctx, {
-	type: 'bar',
+const ctx = document.querySelector('#myChart')
+
+new Chart(ctx, {
+	type: 'line',
 	data: {
-		labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+		labels: wallet.map(item => item.createdAt),
 		datasets: [
 			{
-				label: 'Dataset 1',
-				data: [12, 19, 3, 5, 2, 3, 7],
-				backgroundColor: 'rgba(75, 192, 192, 0.2)',
-				borderColor: 'rgba(75, 192, 192, 1)',
-				borderWidth: 1,
+				label: '',
+				data: wallet.map(item => item.balance),
+				fill: false,
+				borderColor: 'rgb(75, 192, 192)',
+				tension: 0.1,
 			},
 		],
-	},
-	options: {
-		scales: {
-			y: {
-				beginAtZero: true,
-			},
-		},
 	},
 })
 
@@ -73,12 +79,15 @@ const summa = document.querySelector('#Summa')
 const convertBtn = document.querySelector('.btn_convert')
 const result = document.querySelector('#result')
 
-const res_one = await fetch('https://api.apilayer.com/fixer/symbols', {
-	method: 'get',
-	headers: {
-		apikey: 'j2pLT7yrORYlBVoSvkYpj4dXnY4GaQJj',
-	},
-})
+const res_one = await fetch(
+	'https://api.apilayer.com/exchangerates_data/symbols',
+	{
+		method: 'get',
+		headers: {
+			// apikey: 'j2pLT7yrORYlBVoSvkYpj4dXnY4GaQJj',
+		},
+	}
+)
 
 const data = await res_one.json()
 
@@ -91,27 +100,18 @@ for (let key in data.symbols) {
 	`
 }
 
-convertBtn.onclick = () => {
-	var myHeaders = new Headers()
-	myHeaders.append('apikey', 'j2pLT7yrORYlBVoSvkYpj4dXnY4GaQJj')
-
-	var requestOptions = {
-		method: 'GET',
-		redirect: 'follow',
-		headers: myHeaders,
+convertBtn.onclick = async () => {
+	const params = {
+		from: currency_two.value,
+		to: currency_three.value,
+		amount: summa.value,
 	}
-
-	fetch(
-		'https://api.apilayer.com/exchangerates_data/latest?symbols=symbols&base=base',
-		requestOptions
-	)
-		.then(response => response.json())
-		.then(result => {
-			let rate = result.rates[currency_three]
-			let convertedAmount = amount * rate
-			document.querySelector(
-				'#result'
-			).innerText = `Total: ${convertedAmount} ${currency_three}`
-		})
-		.catch(error => console.log('error', error))
+	const convertation = await bank_apiCall.getData('/convert', params)
+	result.innerHTML = `TOTAL: ${convertation.result} ${currency_three.value}`
 }
+
+const Visa = document.querySelector('.Visa')
+const balance = document.querySelector('.balance')
+
+balance.innerHTML = res.balance
+Visa.innerHTML = res.name

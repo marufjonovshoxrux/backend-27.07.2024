@@ -1,15 +1,15 @@
 import { ApiCall } from '../../lib/http.request'
 
 const form = document.forms.namedItem('wallet')
-const apiCall = new ApiCall('http://localhost:8080')
+const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
 const locale = JSON.parse(localStorage.getItem('user'))
 
 const select = document.querySelector('#currency')
 
-const res = await fetch('https://api.apilayer.com/fixer/symbols', {
+const res = await fetch('https://api.apilayer.com/exchangerates_data/symbols', {
 	method: 'get',
 	headers: {
-		apikey: 'oHOwMCakYel19w2RLASK0GUjtTV8OlfO',
+		// apikey: 'oHOwMCakYel19w2RLASK0GUjtTV8OlfO',
 	},
 })
 

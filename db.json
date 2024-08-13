@@ -1,79 +1,72 @@
 {
   "users": [
     {
-      "id": "6a9f71df-1cae-4356-9dc9-ad75143f525d",
-      "createdAt": "2024-08-10T04:52:36.927Z",
-      "updatedAt": "2024-08-10T04:52:36.927Z",
+      "id": "179ed500-9130-4187-8cf5-a99a557b0e52",
+      "createdAt": "2024-08-12T16:27:54.306Z",
+      "updatedAt": "2024-08-12T16:27:54.306Z",
       "email": "shokha0502@gmail.com",
       "names": "Shoxrux",
-      "surname": "Marufjonov",
+      "surname": " ",
       "password": "8613"
-    },
-    {
-      "id": "c159f86e-fcba-4527-94f6-07e9ac6424e8",
-      "createdAt": "2024-08-10T05:59:16.955Z",
-      "updatedAt": "2024-08-10T05:59:16.955Z",
-      "email": "shokha05002@gmail.com",
-      "names": "Shoxrux",
-      "surname": "Шохрух",
-      "password": "8613"
-    },
-    {
-      "id": "2e30a6bb-2a7b-4cf0-8daa-5b7bd3461d57",
-      "createdAt": "2024-08-10T08:56:47.891Z",
-      "updatedAt": "2024-08-10T08:56:47.891Z",
-      "email": "dsarifkulo021@gmail.com",
-      "names": "Daler",
-      "surname": "Sharifkulov",
-      "password": "1234DAler"
     }
   ],
   "wallets": [
     {
-      "id": "1c1d25b5-df32-4b5a-90c5-73fa6626b0de",
-      "createdAt": "2024-08-10T04:53:12.367Z",
-      "updatedAt": "2024-08-10T04:53:12.367Z",
-      "balance": "100",
-      "currency": "MMK",
+      "id": "a4937830-a0ec-47b1-9a12-21b7718f4faa",
+      "createdAt": "2024-08-12T16:28:10.544Z",
+      "updatedAt": "2024-08-12T16:28:10.544Z",
+      "balance": 20,
+      "currency": "USD",
       "name": "Shoxrux",
-      "userID": "6a9f71df-1cae-4356-9dc9-ad75143f525d"
+      "userID": "179ed500-9130-4187-8cf5-a99a557b0e52"
     },
+    
     {
-      "id": "1a12d630-8a1c-4824-9e3d-b45e87f7c952",
-      "createdAt": "2024-08-10T05:15:34.382Z",
-      "updatedAt": "2024-08-10T05:15:34.382Z",
-      "balance": "10000",
-      "currency": "AED",
-      "name": "aaaa",
-      "userID": "6a9f71df-1cae-4356-9dc9-ad75143f525d"
-    },
-    {
-      "id": "26ac7997-f607-4e4a-8462-11aecbe4e6be",
-      "createdAt": "2024-08-10T05:59:31.877Z",
-      "updatedAt": "2024-08-10T05:59:31.877Z",
-      "balance": "100",
-      "currency": "BHD",
-      "name": "Shoxrux",
-      "userID": "c159f86e-fcba-4527-94f6-07e9ac6424e8"
-    },
-    {
-      "id": "af973056-59a1-49a0-9a8f-43dcc256c4cb",
-      "createdAt": "2024-08-10T08:58:21.083Z",
-      "updatedAt": "2024-08-10T08:58:21.083Z",
+      "id": "be01d726-60b7-4304-b4d1-1ce62928d753",
+      "createdAt": "2024-08-13T04:10:52.377Z",
+      "updatedAt": "2024-08-13T04:10:52.377Z",
       "balance": "100",
       "currency": null,
-      "name": "Visa",
-      "userID": "2e30a6bb-2a7b-4cf0-8daa-5b7bd3461d57"
-    },
-    {
-      "id": "d349737a-7d99-4875-b8ad-2853bd576dff",
-      "createdAt": "2024-08-10T08:58:34.301Z",
-      "updatedAt": "2024-08-10T08:58:34.301Z",
-      "balance": 99998,
-      "currency": null,
-      "name": "MASTERCARD",
-      "userID": "2e30a6bb-2a7b-4cf0-8daa-5b7bd3461d57"
+      "name": "ssss",
+      "userID": "179ed500-9130-4187-8cf5-a99a557b0e52"
     }
   ],
-  "transaction": []
+  "transaction": [
+    {
+      "id": "243103ef-8624-463c-b8d4-31ae39f0495b",
+      "createdAt": "2024-08-12T16:28:42.329Z",
+      "updatedAt": "2024-08-12T16:28:42.329Z",
+      "type": "Shoxrux",
+      "total": "30",
+      "kategoriy": "Перевод",
+      "walletID": "a4937830-a0ec-47b1-9a12-21b7718f4faa",
+      "userID": "179ed500-9130-4187-8cf5-a99a557b0e52",
+      "wallets": {
+        "createdAt": "2024-08-12T16:28:10.544Z",
+        "updatedAt": "2024-08-12T16:28:10.544Z",
+        "balance": "100",
+        "currency": "USD",
+        "name": "Shoxrux",
+        "userID": "179ed500-9130-4187-8cf5-a99a557b0e52"
+      }
+    },
+    {
+      "id": "bdcd3973-71f5-46da-a1ed-b3743c2c7765",
+      "createdAt": "2024-08-12T16:35:27.704Z",
+      "updatedAt": "2024-08-12T16:35:27.704Z",
+      "type": "Shoxrux",
+      "total": "40",
+      "kategoriy": "Перевод",
+      "walletID": "a4937830-a0ec-47b1-9a12-21b7718f4faa",
+      "userID": "179ed500-9130-4187-8cf5-a99a557b0e52",
+      "wallets": {
+        "createdAt": "2024-08-12T16:28:10.544Z",
+        "updatedAt": "2024-08-12T16:28:10.544Z",
+        "balance": 70,
+        "currency": "USD",
+        "name": "Shoxrux",
+        "userID": "179ed500-9130-4187-8cf5-a99a557b0e52"
+      }
+    }
+  ]
 }

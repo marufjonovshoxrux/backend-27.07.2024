@@ -14,7 +14,7 @@ export function Table(item) {
     td_num.innerHTML = item.id
     visa.innerHTML = item.type
     auto.innerHTML = item.kategoriy
-    price.innerHTML = Number(item.Summa).toLocaleString('en')
+    price.innerHTML = Number(item.total).toLocaleString('en') 
 
     days.innerHTML = moment(item.createdAt).fromNow()
 

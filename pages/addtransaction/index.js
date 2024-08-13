@@ -2,7 +2,7 @@ import { ApiCall } from '../../lib/http.request'
 import { reload } from '../../lib/utils'
 
 const form = document.forms.namedItem('transaction')
-const apiCall = new ApiCall('http://localhost:8080')
+const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
 const locale = JSON.parse(localStorage.getItem('wallet'))
 const user = JSON.parse(localStorage.getItem('user'))
 const res = await apiCall.getData('/wallets?userId=' + user.id)
@@ -25,9 +25,9 @@ function userTranaction(item) {
 
 reload(res, currencys, userTranaction)
 
-price.innerHTML = 'Сумма которая есть у вас: ' + data.balance
+// price.innerHTML = 'Сумма которая есть у вас: ' + data.balance
 
-form.onsubmit = async (e) => {
+form.onsubmit = async e => {
 	e.preventDefault()
 
 	const transaction = {
@@ -47,13 +47,12 @@ form.onsubmit = async (e) => {
 
 	transaction.wallets = data
 
-	console.log(transaction.total, +data.balance);
-	
+	console.log(transaction.total, +data.balance)
 
 	if (transaction.total <= +data.balance) {
 		Summa.style.border = '1px solid red'
 		form.reset()
-		
+
 		location.assign('/')
 
 		Toastify({
@@ -80,8 +79,6 @@ form.onsubmit = async (e) => {
 		localStorage.setItem('transaction', JSON.stringify(transaction))
 
 		form.reset()
-		location.assign('/')
+		// location.assign('/')
 	}
 }
-
-
