@@ -79,17 +79,17 @@ const summa = document.querySelector('#Summa')
 const convertBtn = document.querySelector('.btn_convert')
 const result = document.querySelector('#result')
 
-const res_one = await fetch(
+const res_one = fetch(
 	'https://api.apilayer.com/exchangerates_data/symbols',
 	{
 		method: 'get',
 		headers: {
-			// apikey: 'j2pLT7yrORYlBVoSvkYpj4dXnY4GaQJj',
+			apikey: 'j2pLT7yrORYlBVoSvkYpj4dXnY4GaQJj',
 		},
 	}
 )
 
-const data = await res_one.json()
+const data =  res_one.json()
 
 for (let key in data.symbols) {
 	currency_two.innerHTML += `

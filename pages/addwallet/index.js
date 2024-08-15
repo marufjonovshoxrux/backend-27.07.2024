@@ -9,7 +9,7 @@ const select = document.querySelector('#currency')
 const res = fetch('https://api.apilayer.com/exchangerates_data/symbols', {
 	method: 'get',
 	headers: {
-		// apikey: 'oHOwMCakYel19w2RLASK0GUjtTV8OlfO',
+		apikey: 'oHOwMCakYel19w2RLASK0GUjtTV8OlfO',
 	},
 })
 
